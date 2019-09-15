@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {httpGet} from '../../services';
+import {API_URL} from '../../data';
 
 export default class Content extends Component{
     state = {
@@ -7,7 +8,7 @@ export default class Content extends Component{
     };
 
     componentDidMount(){
-        httpGet('http://localhost:8080/')
+        httpGet(API_URL)
             .then((res)=>{
                 this.setState({msg: res.data.msg});
             });
