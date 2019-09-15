@@ -1,5 +1,17 @@
+.nav-parent{
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
 .nav{
     list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.nav>li{
+    display: inline-block;
+    width: 150px;
+    margin-right: 20px;
 }
 
 .nav a{

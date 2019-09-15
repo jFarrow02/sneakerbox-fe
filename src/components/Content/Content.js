@@ -1,25 +1,17 @@
 import React, {Component} from 'react';
-import {httpGet} from '../../services';
-import {API_URL} from '../../data';
 import {Nav} from '../index';
+import {Route} from 'react-router-dom';
+import {Login, Signup} from '../../components';
+import './Content.css';
 
 export default class Content extends Component{
-    state = {
-        msg: '',
-    };
-
-    componentDidMount(){
-        httpGet(API_URL)
-            .then((res)=>{
-                this.setState({msg: res.data.msg});
-            });
-    }
-
+   
     render(){
         return(
-            <main>
+            <main className='content'>
                 <Nav/>
-                <div>{this.state.msg}</div>
+                <Route path='/login' component={Login}/>
+                <Route path='/signup' component={Signup}/>
             </main>
         );
     }
