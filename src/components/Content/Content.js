@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {httpGet} from '../../services';
 import {API_URL} from '../../data';
+import {Nav} from '../index';
 
 export default class Content extends Component{
     state = {
@@ -17,7 +18,7 @@ export default class Content extends Component{
     render(){
         return(
             <main>
-                <h2>Content</h2>
+                <Nav/>
                 <div>{this.state.msg}</div>
             </main>
         );
