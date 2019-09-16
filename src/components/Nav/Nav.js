@@ -7,13 +7,13 @@ export default class Nav extends Component{
 
     render(){
         return(
-                 <nav className='nav-parent'>
-                    <ul className='nav'>
-                        <li><NavLink to={APP_ROUTES.login}>Login</NavLink></li>
-                        <li><NavLink to={APP_ROUTES.signup}>Signup</NavLink></li>
-                    </ul>
-                </nav>
-           
+            <nav className='nav-parent'>
+                <ul className='nav'>
+                    {APP_ROUTES.map((current, idx)=>{
+                        return(<li key={idx}><NavLink to={current.url}>{current.txt}</NavLink></li>);
+                    })}
+                </ul>
+            </nav>
         );
     }
 }

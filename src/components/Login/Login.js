@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {httpGet} from '../../services';
-import {API_URL} from '../../data';
+import {API_URL, LOGIN_CONFIG,} from '../../data';
+import {Button, FormInput, FormLabel} from '../index';
+import './Login.css';
 
 export default class Login extends Component{
     state = {
@@ -16,10 +18,34 @@ export default class Login extends Component{
 
     render(){
         return(
-            <section>
+            <section className='loginsection'>
                 <h2>Login Page</h2>
-                <div>{this.state.msg}</div>
+                <form className='loginform'>
+                   {LOGIN_CONFIG.map((current, idx)=>{
+                    return(
+                        <div className='inputgroup'
+                            key={`inputgroup-${idx}`}
+                        >
+                            <FormLabel
+                                for={current.name}
+                                txt={current.txt}
+                                key={`label-${idx}`}
+                            />
+                            <FormInput
+                                className='right'
+                                type={current.type}
+                                name={current.name}
+                                key={`input-${idx}`}
+                            />
+                        </div>
+                    );
+                   })}
+                   <Button
+                    className='loginbutton'
+                    txt='Login'
+                    />
+                </form>
             </section>
-        )
+        );
     }
 }
