@@ -11,7 +11,8 @@ export default class FormInput extends Component{
         return(
             <input 
                 type={this.props.type}
-                name={this.props.name}
+                name={this.props.fieldName}
+                onChange={(e)=>{this.props.onChange(e)}}
                 value={this.props.value}
             />
         )
@@ -19,13 +20,15 @@ export default class FormInput extends Component{
 }
 
 FormInput.propTypes={
-    name: PropTypes.string,
+    fieldName: PropTypes.string,
+    onChange: PropTypes.func,
     type: PropTypes.string,
     value: PropTypes.string,
 };
 
 FormInput.defaultProps={
-    name: '',
+    fieldName: '',
+    onChange: null,
     type: 'text',
     value: '',
 };

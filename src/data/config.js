@@ -1,4 +1,5 @@
-export const API_URL = 'http://sneakerbox02.zmn9fysntj.us-east-1.elasticbeanstalk.com/';
+// export const API_URL = 'http://sneakerbox02.zmn9fysntj.us-east-1.elasticbeanstalk.com/';
+export const API_URL = 'http://localhost:9000';
 
 export const APP_ROUTES = [
     {url: '/login', txt: 'Login',},

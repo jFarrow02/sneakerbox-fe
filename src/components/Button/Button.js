@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { nullLiteral } from '@babel/types';
 
 export default class Button extends Component{
-    constructor(props){
-        super(props);
-    }
 
     render(){
 
         return(
-            <button>
+            <button
+                onClick={()=>{this.props.onClick()}}
+            >
                 {this.props.txt}
             </button>
         )
@@ -17,9 +17,11 @@ export default class Button extends Component{
 }
 
 Button.propTypes={
+    onClick: PropTypes.func,
     txt: PropTypes.string,
 }
 
 Button.defaultProps={
+    onClick: null,
     txt: 'Button',
 }
