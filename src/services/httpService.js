@@ -5,5 +5,14 @@ export const httpGet = (url)=>{
 }
 
 export const httpPost = (url, data)=>{
-    return axios.post(url, data);
+    console.log(data);
+    return axios(
+        {
+            method: 'post',
+            url: url,
+            headers: {'Content-Type': 'application/json'},
+            data: JSON.stringify(data),
+        }
+    );
+
 }

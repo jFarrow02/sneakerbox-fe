@@ -17,7 +17,7 @@ export default class Login extends Component{
     onClick = ()=>{
         const loginUrl = `${API_URL}${APP_ROUTES[0].url}`;
         const {password, username} = this.state;
-        httpPost(loginUrl, {username, password})
+        httpPost(loginUrl, {username: username, password: password})
             .then((res)=>{
 
             })
