@@ -1,32 +1,35 @@
-import {GET_TOKEN, SET_TOKEN} from './index';
-import {combineReducers} from 'react-redux';
+import {SET_TOKEN, SET_USER} from './actions';
 
 //1. Specify initial application state
 const initialState = {
-    authToken: null,
-    currentUser: null,
+    authToken: false,
+    currentUser: false,
 }
 
-const getState = (state=initialState)=>{
-    return state;
-}
+//2. Create reducer functions
 
-const handleTokens = (state=initialState, action)=>{
+const authToken = (state=initialState.authToken, action)=>{
     switch(action.type){
-        case GET_TOKEN:
-            return(state.authToken);
         case SET_TOKEN:
-            return(Object.assign({}, state, {authToken: action.authToken, currentUser: action.currentUser}));
+            return(Object.assign({}, state, {authToken: action.authToken}));
         default:
-            getState();
+           return state;
     }
 }
 
-const sneakerboxApp = combineReducers(
-    {
-        getState,
-        handleTokens,
+const currentUser = (state=initialState.currentUser, action)=>{
+    switch(action.type){
+        case SET_USER:
+            return(Object.assign({}, state, action.currentUser));
+        default:
+            return state;
     }
-);
+}
 
-export default sneakerboxApp;
+//Combine reducers into single object
+export const sneakerboxApp = (state={}, action)=>{
+    return{
+        authToken: authToken(state.authToken, action),  //Give each reducer a PIECE of the overall state to manage
+        currentUser: currentUser(state.currentUser, action),
+    }
+}

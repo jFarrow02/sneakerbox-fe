@@ -1,15 +1,13 @@
 import {
-    GET_TOKEN,
     SET_TOKEN,
-    getToken,
+    SET_USER,
     setToken,
+    setUser
 } from './actions';
 
-export default(
-    {
-        GET_TOKEN,
-        SET_TOKEN,
-        getToken,
-        setToken,
-    }
-);
+export default {
+    SET_TOKEN,
+    SET_USER,
+    setToken,
+    setUser,
+}

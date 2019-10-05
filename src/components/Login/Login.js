@@ -19,7 +19,11 @@ export default class Login extends Component{
         const {password, username} = this.state;
         httpPost(loginUrl, {username: username, password: password})
             .then((res)=>{
-
+                /**
+                 * Get auth token from response upon successful
+                 * authentication and save to redux store
+                 */
+                let token = res.token;
             })
             .catch((err)=>{
 

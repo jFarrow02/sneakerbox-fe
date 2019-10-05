@@ -1,9 +1,6 @@
 import {createStore} from 'redux';
+import {sneakerboxApp} from './reducers';
 
-/**
- * Application state structure:
- * {
- *     authToken: {String},
- *     currentUser: {String},
- * }
- */
+const store = createStore(sneakerboxApp);
+console.log(store.getState());
+export default store;
