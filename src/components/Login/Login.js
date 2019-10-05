@@ -3,8 +3,9 @@ import {httpGet, httpPost} from '../../services';
 import {API_URL, APP_ROUTES} from '../../data';
 import {Button, FormInput, FormLabel} from '../index';
 import './Login.css';
+import {connect} from 'react-redux';
 
-export default class Login extends Component{
+class Login extends Component{
     constructor(props){
         super(props);
     }
@@ -75,3 +76,9 @@ export default class Login extends Component{
         );
     }
 }
+
+function mapStateToProps(state){
+    return {authToken: state.authToken, currentUser: state.currentUser}
+};
+
+export default connect(mapStateToProps)(Login);
