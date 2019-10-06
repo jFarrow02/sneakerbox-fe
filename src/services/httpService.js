@@ -5,7 +5,6 @@ export const httpGet = (url)=>{
 }
 
 export const httpPost = (url, data)=>{
-    console.log(data);
     return axios(
         {
             method: 'post',

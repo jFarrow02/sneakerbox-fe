@@ -11,7 +11,8 @@ const initialState = {
 const authToken = (state=initialState.authToken, action)=>{
     switch(action.type){
         case SET_TOKEN:
-            return(Object.assign({}, state, {authToken: action.authToken}));
+            //return(Object.assign({}, state, {authToken: action.authToken}));
+            return action.authToken;
         default:
            return state;
     }
@@ -20,7 +21,8 @@ const authToken = (state=initialState.authToken, action)=>{
 const currentUser = (state=initialState.currentUser, action)=>{
     switch(action.type){
         case SET_USER:
-            return(Object.assign({}, state, action.currentUser));
+            //return(Object.assign({}, state, action.currentUser));
+            return action.currentUser;
         default:
             return state;
     }

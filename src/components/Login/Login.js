@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import {httpGet, httpPost} from '../../services';
+import {httpPost} from '../../services';
 import {API_URL, APP_ROUTES} from '../../data';
 import {Button, FormInput, FormLabel} from '../index';
 import './Login.css';
 import {connect} from 'react-redux';
+import {store} from '../../store/store';
+import {setToken, setUser} from '../../store/index';
 
 class Login extends Component{
     constructor(props){
@@ -24,7 +26,11 @@ class Login extends Component{
                  * Get auth token from response upon successful
                  * authentication and save to redux store
                  */
-                let token = res.token;
+                let token = res.data.token,
+                    currentUser = res.data.currentUser;
+                console.log(res.data);
+                store.dispatch(setToken(token));
+                store.dispatch(setUser(currentUser));
             })
             .catch((err)=>{
 

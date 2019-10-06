@@ -5,7 +5,7 @@ import {
     setUser
 } from './actions';
 
-export default {
+export {
     SET_TOKEN,
     SET_USER,
     setToken,
