@@ -1,17 +1,23 @@
 import axios from 'axios';
+//axios.defaults.headers.common['Authorization'] = store.getState().authToken;
 
-export const httpGet = (url)=>{
-    return axios.get(url);
+export const httpGet = (url, headers)=>{
+    return axios(
+        {
+            method: 'get',
+            url: url,
+            headers: headers,
+        }
+    )
 }
 
-export const httpPost = (url, data)=>{
+export const httpPost = (url, data, headers)=>{
     return axios(
         {
             method: 'post',
             url: url,
-            headers: {'Content-Type': 'application/json'},
+            headers: headers,
             data: JSON.stringify(data),
         }
     );
-
 }

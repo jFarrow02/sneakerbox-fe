@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Nav} from '../index';
 import {Route} from 'react-router-dom';
-import {Login, Signup} from '../../components';
+import {Login, MyAccount, Signup} from '../../components';
 import './Content.css';
 
 export default class Content extends Component{
@@ -11,6 +11,7 @@ export default class Content extends Component{
             <main className='content'>
                 <Nav/>
                 <Route path='/login' component={Login}/>
+                <Route path='/myaccount' component={MyAccount}/>
                 <Route path='/signup' component={Signup}/>
             </main>
         );

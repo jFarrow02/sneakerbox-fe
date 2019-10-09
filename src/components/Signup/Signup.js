@@ -16,9 +16,8 @@ export default class Signup extends Component{
     }
 
     onClick = ()=>{
-        const signupUrl = `${API_URL}${APP_ROUTES[4].url}`;
-        const {password, username} = this.state;
-        httpPost(signupUrl, {username: username, password: password})
+        const signupUrl = `${API_URL}${APP_ROUTES[5].url}`;
+        httpPost(signupUrl, {username: this.state.username, password: this.state.password}, {'Content-Type' : 'application/json'})
             .then((res)=>{
 
             })

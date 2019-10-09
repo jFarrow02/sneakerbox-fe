@@ -20,7 +20,7 @@ class Login extends Component{
     onClick = ()=>{
         const loginUrl = `${API_URL}${APP_ROUTES[0].url}`;
         const {password, username} = this.state;
-        httpPost(loginUrl, {username: username, password: password})
+        httpPost(loginUrl, {username: username, password: password}, {'Content-Type' : 'application/json'})
             .then((res)=>{
                 /**
                  * Get auth token from response upon successful
@@ -28,12 +28,11 @@ class Login extends Component{
                  */
                 let token = res.data.token,
                     currentUser = res.data.currentUser;
-                console.log(res.data);
                 store.dispatch(setToken(token));
                 store.dispatch(setUser(currentUser));
             })
             .catch((err)=>{
-
+                console.log(err);
             });
     }
 
