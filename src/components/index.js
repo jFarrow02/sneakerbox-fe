@@ -1,19 +1,15 @@
-import Button from './Button';
+import Banner from './Banner';
 import Content from './Content';
-import FormInput from './FormInput';
-import FormLabel from './FormLabel';
 import Login from './Login';
 import MyAccount from './MyAccount';
-import Nav from './Nav';
+import SideNav from './SideNav';
 import Signup from './Signup';
 
 export {
-    Button,
+    Banner,
     Content,
-    FormInput,
-    FormLabel,
     Login,
     MyAccount,
-    Nav,
+    SideNav,
     Signup,
 };

@@ -1,24 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-//import {httpGet} from '../../services/httpService';
-import axios from 'axios';
+import {httpGet} from '../../services/httpService';
+import {API_URL, APP_ROUTES} from '../../data/index';
 
 class MyAccount extends Component{
+    static URL = `${API_URL}${APP_ROUTES[2].url}`;
     constructor(props){
         super(props);
     }
 
     componentDidMount = ()=>{
-        axios(
-            {
-                method: 'GET',
-                url: 'http://localhost:9000/myaccount',
-                headers: {
-                    'Content-Type'  : 'application/json',
-                    'Authorization' :  this.props.token,
-                }
-            }
-        )
+       httpGet(MyAccount.URL, {'Content-Type': 'application/json', 'Authorization' : `Bearer ${this.props.token}`})
         .then((res)=>{
             console.log(res);
         })

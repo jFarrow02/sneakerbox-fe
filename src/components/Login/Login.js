@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {httpPost} from '../../services';
 import {API_URL, APP_ROUTES} from '../../data';
-import {Button, FormInput, FormLabel} from '../index';
 import './Login.css';
 import {connect} from 'react-redux';
 import {store} from '../../store/store';
@@ -46,37 +45,6 @@ class Login extends Component{
         return(
             <section className='loginsection'>
                 <h2>Login Page</h2>
-                <div className='loginform'>
-                    <div className='inputgroup'>
-                        <FormLabel
-                            for='username'
-                            txt='Username'
-                        />
-                        <FormInput
-                            className='right'
-                            fieldName='username'
-                            onChange={this.onChange}
-                            type='text'
-                            value={this.state.username}
-                        />
-                        <FormLabel
-                            for='password'
-                            txt='Password'
-                        />
-                        <FormInput
-                            className='right'
-                            fieldName='password'
-                            onChange={this.onChange}
-                            type='password'
-                            value={this.state.password}
-                        />
-                    </div>
-                   <Button
-                    className='loginbutton'
-                    onClick={this.onClick}
-                    txt='Login'
-                    />
-                </div>
             </section>
         );
     }
