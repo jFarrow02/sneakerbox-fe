@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 import {
     Banner,
+    Footer,
     Login,
+    Main,
     MyAccount,
     SideNav,
     Signup
@@ -19,6 +21,8 @@ export default class Content extends Component{
                 <Route path='/signup' component={Signup}/>
                 <Banner/>
                 <SideNav/>
+                <Main/>
+                <Footer/>
             </main>
         );
     }

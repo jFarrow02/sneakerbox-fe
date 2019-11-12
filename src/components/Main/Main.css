@@ -1,0 +1,4 @@
+.main{
+    grid-area: 2 / 4 / 3 / 13;
+    border: 1px solid goldenrod;
+}

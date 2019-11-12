@@ -14,3 +14,7 @@ export const LOGIN_CONFIG =[
     {type: 'text', name: 'username', txt: 'Username:',},
     {type: 'password', name: 'password', txt: 'Password:',}
 ];
+
+export const FOOTER_CONFIG = {
+    copyright: new Date(Date.now()).getFullYear(),
+}
