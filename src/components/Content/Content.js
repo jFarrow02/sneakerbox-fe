@@ -17,8 +17,8 @@ export default class Content extends Component{
                 <Route path='/login' component={Login}/>
                 <Route path='/myaccount' component={MyAccount}/>
                 <Route path='/signup' component={Signup}/>
-                <SideNav/>
                 <Banner/>
+                <SideNav/>
             </main>
         );
     }
